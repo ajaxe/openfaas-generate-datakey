@@ -1,0 +1,8 @@
+provider:
+  name: faas
+  gateway: https://faas.apogee-dev.com
+functions:
+  generate-datakey:
+    lang: go
+    handler: ./func
+    image: docker-registry.apogee-dev.com/generate-datakey:latest
