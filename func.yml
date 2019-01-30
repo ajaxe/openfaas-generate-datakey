@@ -6,3 +6,8 @@ functions:
     lang: go
     handler: ./func
     image: docker-registry.apogee-dev.com/generate-datakey:latest
+    labels:
+      traefik.docker.network: functions
+      traefik.enable: true
+      traefik.domain: faas.apogee-dev.com
+      traefik.frontend.rule: "Host:faas.apogee-dev.com;PathPrefix:/function/generate-datakey"
